@@ -36,6 +36,25 @@ int main(){
         cin>>x[i];
         cin>>y[i];
     }
+
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n-i-1;j++){
+            if(x[j+1]<x[j]){
+                int temp=x[j+1];
+                x[j+1]=x[j];
+                x[j]=temp;
+
+                int temp2=y[j+1];
+                y[j+1]=y[j];
+                y[j]=temp2;
+
+                
+                
+            }
+        }
+    }
+
+
     int flag=0;
     for(int i=0;i<n;i++){
         if(s>x[i]){
@@ -43,11 +62,17 @@ int main(){
         }
         else if(s<x[i]){
             flag=1;
-            cout<<"NO";
-            break;
+            cout<<"NO"<<endl;
+            return 0;
+        }
+        else if(s==x[i]){
+            flag=1;
         }
     }
     if(flag==0){
-        cout<<"YES";
+        cout<<"YES"<<endl;
+    }
+    else{
+        cout<<"NO"<<endl;
     }
 }
